@@ -1,7 +1,9 @@
 ## GT-Seq Genotyping following Nate Cambell's code
 https://github.com/GTseq/GTseek_utils
-If you have any questions, refer to Nate's GTSeek-Genotyping-Pipeline.txt
+If you have any questions, refer to Nate's GTSeq-Genotyping-Pipeline.txt
 The majority of the information is taken from Nate's file with one small exception.  I have had problems with his barcode splitter and have had to do it manually.  I have asked benji to update some of the packages on the server so this make work better but the manual way of demultiplexing is listed below.
+
+Before you begin, you will need to upload all GTSeq files from github onto the UI server in a folder.  Once they are there, you can refer back to the folder when running scripts.
 
 # Example DATA
 /mnt/lfs2/staceyn/PYRA1/09-GTSeq/02102022_Run_PYRA_NIDGS_GOBI/PYRA1_02102022.csv
