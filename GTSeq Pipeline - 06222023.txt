@@ -1,7 +1,11 @@
+##GT-Seq Genotyping following Nate Cambell's code
+https://github.com/GTseq/GTseek_utils
+
+#Example DATA
 /mnt/lfs2/staceyn/PYRA1/09-GTSeq/02102022_Run_PYRA_NIDGS_GOBI/PYRA1_02102022.csv
 Directory: /mnt/lfs2/staceyn/Consulting_Projects/RAW_Data/SeqMatic/NextSeq_02252022/Undetermined_S0_R1_001.fastq
 
-1- Split raw fastq sequence file into individual fastq files using dual index sequences.
+#1- Split raw fastq sequence file into individual fastq files using dual index sequences.
 NovaSeq runs are reverse compliments.  Must take reverse compliments of i7 barcodes when searching.  
 i7 Barcodes Used:
 Name			Barcode	Reverse_Compliment	PlateID
@@ -18,6 +22,7 @@ Name			Barcode	Reverse_Compliment	PlateID
 
 Example:
 	-First use grep to split into plates using the i7 index sequence bases
+```
 grep -A3 '^@A01335.*:TATGCT' GC3F-SN-7777---7165_S0_L001_R1_001.fastq | grep -v '^--$' > ~/PYRA1/09-GTSeq//PYRA_Tissue_06222023/PYRA2001F.fastq &
 grep -A3 '^@A01335.*:CAGTCG' GC3F-SN-7777---7165_S0_L001_R1_001.fastq | grep -v '^--$' > ~/PYRA1/09-GTSeq//PYRA_Tissue_06222023/PYRA2002F.fastq &
 grep -A3 '^@A01335.*:GTCAGG' GC3F-SN-7777---7165_S0_L001_R1_001.fastq | grep -v '^--$' > ~/PYRA1/09-GTSeq//PYRA_Tissue_06222023/PYRA2003F.fastq &
@@ -42,7 +47,7 @@ grep -A3 '^@A01335.*:TTCGCC' GC3F-SN-7875---7258_S0_L001_R2_001.fastq | grep -v 
 grep -A3 '^@A01335.*:TTCGCC' GC3F-SN-7875---7258_S0_L001_R2_001.fastq | grep -v '^--$' > ~/Consulting_Projects/Eaker_Deer/GTseq/OP1_06222023/EdeerT1R.fastq 
 grep -A3 '^@A01335.*:TTCGCC' GC3F-SN-7875---7258_S0_L001_R2_001.fastq | grep -v '^--$' > ~/Consulting_Projects/Eaker_Deer/GTseq/OP1_06222023/EdeerP1R.fastq 
 
-
+```
 grep ^@NB501656 Undetermined_S0_R1_001.fastq | cut -d":" -f10 | sort -r | uniq -c | sort -nrk1,1 > barcodes.txt
 
 # of reads per file: (cat <file.fastq> | echo $((`wc -l`/4)) )
