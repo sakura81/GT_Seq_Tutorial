@@ -1,11 +1,11 @@
-##GT-Seq Genotyping following Nate Cambell's code
+## GT-Seq Genotyping following Nate Cambell's code
 https://github.com/GTseq/GTseek_utils
 
-#Example DATA
+# Example DATA
 /mnt/lfs2/staceyn/PYRA1/09-GTSeq/02102022_Run_PYRA_NIDGS_GOBI/PYRA1_02102022.csv
 Directory: /mnt/lfs2/staceyn/Consulting_Projects/RAW_Data/SeqMatic/NextSeq_02252022/Undetermined_S0_R1_001.fastq
 
-#1- Split raw fastq sequence file into individual fastq files using dual index sequences.
+# 1- Split raw fastq sequence file into individual fastq files using dual index sequences.
 NovaSeq runs are reverse compliments.  Must take reverse compliments of i7 barcodes when searching.  
 i7 Barcodes Used:
 Name			Barcode	Reverse_Compliment	PlateID
